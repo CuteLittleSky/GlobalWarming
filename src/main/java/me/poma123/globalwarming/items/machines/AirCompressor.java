@@ -30,7 +30,7 @@ public abstract class AirCompressor extends AContainer implements RecipeDisplayI
         addRecipe(5, Items.CO2_CANISTER, new ItemStack[] { SlimefunItems.CARBON, Items.EMPTY_CANISTER });
     }
 
-    private void addRecipe(int seconds, ItemStack input, ItemStack[] output) {
+    protected void addRecipe(int seconds, ItemStack input, ItemStack[] output) {
         registerRecipe(seconds, new ItemStack[] { input }, output);
     }
 
@@ -42,5 +42,23 @@ public abstract class AirCompressor extends AContainer implements RecipeDisplayI
     @Override
     public ItemStack getProgressBar() {
         return new ItemStack(Material.HOPPER);
+    }
+
+    public static class AirCompressor2 extends AirCompressor {
+
+        public AirCompressor2(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+            super(itemGroup, item, recipeType, recipe);
+        }
+
+        @Override
+        protected void registerDefaultRecipes() {
+            addRecipe(5 / 8, Items.EMPTY_CANISTER, new ItemStack[] { Items.CO2_CANISTER });
+            addRecipe(5 / 8, Items.CO2_CANISTER, new ItemStack[] { SlimefunItems.CARBON, Items.EMPTY_CANISTER });
+        }
+
+        @Override
+        public String getMachineIdentifier() {
+            return "AIR_COMPRESSOR_2";
+        }
     }
 }

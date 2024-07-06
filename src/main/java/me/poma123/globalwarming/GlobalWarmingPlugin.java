@@ -151,6 +151,26 @@ public class GlobalWarmingPlugin extends JavaPlugin implements SlimefunAddon {
                 return 1;
             }
         }.register(this);
+        new AirCompressor.AirCompressor2(itemGroup, Items.AIR_COMPRESSOR_2, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+            Items.AIR_COMPRESSOR, Items.AIR_COMPRESSOR, Items.AIR_COMPRESSOR,
+            Items.AIR_COMPRESSOR, Items.SKYCRAFT_COMPRESS_CORE, Items.AIR_COMPRESSOR,
+            Items.AIR_COMPRESSOR, Items.AIR_COMPRESSOR, Items.AIR_COMPRESSOR
+    }) {
+        @Override
+        public int getEnergyConsumption() {
+            return 128;
+        }
+    
+        @Override
+        public int getCapacity() {
+            return 4096;
+        }
+    
+        @Override
+        public int getSpeed() {
+            return 8;
+        }
+    }.register(this);
 
         new SlimefunItem(itemGroup, Items.EMPTY_CANISTER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 null, SlimefunItems.SOLDER_INGOT, null,
@@ -183,12 +203,18 @@ public class GlobalWarmingPlugin extends JavaPlugin implements SlimefunAddon {
                 new ItemStack(Material.GLASS), SlimefunItems.GOLD_PAN, new ItemStack(Material.GLASS),
                 null, new ItemStack(Material.GLASS), null
         }).register(this);
+
+        new SlimefunItem(itemGroup, Items.SKYCRAFT_COMPRESS_CORE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+            SlimefunItems.CARBON_CHUNK, SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.CARBON_CHUNK,
+            SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.CARBONADO, SlimefunItems.SYNTHETIC_DIAMOND,
+            SlimefunItems.CARBON_CHUNK, SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.CARBON_CHUNK
+        }).register(this);
     }
 
     private void registerResearches() {
         registerResearch("thermometer", 69696969, "温度计", 10, Items.THERMOMETER);
         registerResearch("air_quality_meter", 69696970, "空气质量监测仪", 30, Items.AIR_QUALITY_METER);
-        registerResearch("air_compressor", 69696971, "空气压缩机", 40, Items.AIR_COMPRESSOR);
+        registerResearch("air_compressor", 69696971, "空气压缩机", 40, Items.AIR_COMPRESSOR, Items.AIR_COMPRESSOR_2);
         registerResearch("canisters", 69696972, "污染存储", 6, Items.EMPTY_CANISTER, Items.CO2_CANISTER);
         registerResearch("filter", 69696973, "过滤", 8, Items.FILTER);
         registerResearch("mercury", 69696973, "水银", 12, Items.CINNABARITE, Items.MERCURY);
