@@ -147,10 +147,9 @@ public class PollutionListener implements Listener {
         }
 
         for (Player p : world.getPlayers()) {
-            p.sendMessage(ChatColors.color(GlobalWarmingPlugin.getMessagesConfig().getString("messages.climate-change").replace("%value%", difference)));
 
             if (news.length() > 0) {
-                p.sendMessage(news);
+                return;
             }
         }
     }
