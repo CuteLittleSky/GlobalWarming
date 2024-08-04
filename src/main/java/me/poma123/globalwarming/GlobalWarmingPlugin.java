@@ -200,7 +200,7 @@ public class GlobalWarmingPlugin extends JavaPlugin implements SlimefunAddon {
 
         new SlimefunItem(itemGroup, Items.FILTER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 null, new ItemStack(Material.GLASS), null,
-                new ItemStack(Material.GLASS), SlimefunItems.GOLD_PAN, new ItemStack(Material.GLASS),
+                new ItemStack(Material.GLASS), Items.SKYCRAFT_ACTIVE_CHARCOAL, new ItemStack(Material.GLASS),
                 null, new ItemStack(Material.GLASS), null
         }).register(this);
 
@@ -209,15 +209,23 @@ public class GlobalWarmingPlugin extends JavaPlugin implements SlimefunAddon {
             SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.CARBONADO, SlimefunItems.SYNTHETIC_DIAMOND,
             SlimefunItems.CARBON_CHUNK, SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.CARBON_CHUNK
         }).register(this);
+
+        new SlimefunItem(itemGroup, Items.SKYCRAFT_ACTIVE_CHARCOAL, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+            new ItemStack(Material.CHARCOAL), new ItemStack(Material.PAPER), new ItemStack(Material.CHARCOAL),
+            new ItemStack(Material.PAPER), new ItemStack(Material.ICE), new ItemStack(Material.PAPER),
+            new ItemStack(Material.CHARCOAL), new ItemStack(Material.PAPER), new ItemStack(Material.CHARCOAL)
+        }).register(this);
     }
 
     private void registerResearches() {
         registerResearch("thermometer", 69696969, "温度计", 10, Items.THERMOMETER);
         registerResearch("air_quality_meter", 69696970, "空气质量监测仪", 30, Items.AIR_QUALITY_METER);
-        registerResearch("air_compressor", 69696971, "空气压缩机", 40, Items.AIR_COMPRESSOR, Items.AIR_COMPRESSOR_2);
+        registerResearch("air_compressor", 69696971, "空气压缩机", 30, Items.AIR_COMPRESSOR);
+        registerResearch("air_compressor", 69696971, "高级空气压缩机", 50, Items.SKYCRAFT_COMPRESS_CORE, Items.AIR_COMPRESSOR_2);
         registerResearch("canisters", 69696972, "污染存储", 6, Items.EMPTY_CANISTER, Items.CO2_CANISTER);
         registerResearch("filter", 69696973, "过滤", 8, Items.FILTER);
         registerResearch("mercury", 69696973, "水银", 12, Items.CINNABARITE, Items.MERCURY);
+        registerResearch("activecoal", 69696973, "活性炭", 3, Items.SKYCRAFT_ACTIVE_CHARCOAL);
     }
 
     private void scheduleTasks() {

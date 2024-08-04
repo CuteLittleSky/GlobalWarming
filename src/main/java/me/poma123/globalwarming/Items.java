@@ -22,6 +22,7 @@ public final class Items {
     public static final SlimefunItemStack CINNABARITE = new SlimefunItemStack("CINNABARITE", "d67a8a3d7d5aa5db00dff5c82f846ea0aeb7d645f0e467d7e9d9a18e9fa5b012", "&c朱砂");
     public static final SlimefunItemStack MERCURY = new SlimefunItemStack("MERCURY", Material.GRAY_DYE, "&7水银");
     public static final SlimefunItemStack FILTER = new SlimefunItemStack("AIR_COMPRESSOR_FILTER", Material.GUNPOWDER, "&7过滤器");
+    public static final SlimefunItemStack SKYCRAFT_ACTIVE_CHARCOAL = new SlimefunItemStack("SKYCRAFT_ACTIVE_CHARCOAL", Material.CHARCOAL, "&8活性炭", "", "&7必要的活性物质");
     public static final SlimefunItemStack SKYCRAFT_COMPRESS_CORE = new SlimefunItemStack("SKYCRAFT_COMPRESS_CORE", Material.GUNPOWDER, "&c压缩核心", "", "&7可以使机器聚合的神奇粉末");
 
     static {
