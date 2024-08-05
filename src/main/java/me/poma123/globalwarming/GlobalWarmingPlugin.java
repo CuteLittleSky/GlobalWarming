@@ -221,11 +221,11 @@ public class GlobalWarmingPlugin extends JavaPlugin implements SlimefunAddon {
         registerResearch("thermometer", 69696969, "温度计", 10, Items.THERMOMETER);
         registerResearch("air_quality_meter", 69696970, "空气质量监测仪", 30, Items.AIR_QUALITY_METER);
         registerResearch("air_compressor", 69696971, "空气压缩机", 30, Items.AIR_COMPRESSOR);
-        registerResearch("air_compressor", 69696971, "高级空气压缩机", 50, Items.SKYCRAFT_COMPRESS_CORE, Items.AIR_COMPRESSOR_2);
+        registerResearch("air_compressor2", 69696975, "高级空气压缩机", 50, Items.SKYCRAFT_COMPRESS_CORE, Items.AIR_COMPRESSOR_2);
         registerResearch("canisters", 69696972, "污染存储", 6, Items.EMPTY_CANISTER, Items.CO2_CANISTER);
         registerResearch("filter", 69696973, "过滤", 8, Items.FILTER);
-        registerResearch("mercury", 69696973, "水银", 12, Items.CINNABARITE, Items.MERCURY);
-        registerResearch("activecoal", 69696973, "活性炭", 3, Items.SKYCRAFT_ACTIVE_CHARCOAL);
+        registerResearch("mercury", 69696974, "水银", 12, Items.CINNABARITE, Items.MERCURY);
+        registerResearch("activecoal2", 69696976, "活性炭", 3, Items.SKYCRAFT_ACTIVE_CHARCOAL);
     }
 
     private void scheduleTasks() {
